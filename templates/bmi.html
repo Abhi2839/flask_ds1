@@ -1,0 +1,174 @@
+<!--  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <form method="POST">
+<input type="number" step="any" name="Weight" placeholder="Enter Weight in Kg" required>
+<br>
+ 
+<input type="number" step ="any" name="Height" placeholder="Enter Height in Meters" required><br>
+ <button type="submit">Calculate BMI</button>
+    </form>
+    <h1>
+        The bmi index {{calc_index}}
+    </h1>
+</body>
+</html>
+
+-->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(175deg, #71d590, #d6bba0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+    .container {
+      margin-top: 80px;
+      max-width: 500px;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+    }
+    h1 {
+      text-align: center;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">BMI Calculator</h1>
+    <form method="POST">
+      <div class="mb-3">
+        <label class="form-label">Weight (kg):</label>
+        <input type="number" step="any" name="Weight" class="form-control" placeholder="Enter your weight" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Height (m):</label>
+        <input type="number" step="any" name="Height" class="form-control" placeholder="Enter your height" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Calculate BMI</button>
+    </form>
+
+    {% if calc_index %}
+    <div class="alert alert-info mt-4 text-center">
+      <strong>Your BMI is:</strong> {{ calc_index }}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BMI Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+      
+    .underweight { color: blue; font-weight: bold; 
+    background-color: red;}
+            .normal { color: green; font-weight: bold; 
+            background-color: white;}
+            .overweight { color: orange; font-weight: bold; 
+            background-color: black;}
+            .obese { color: red; font-weight: bold; 
+            background-color: maroon;}
+    body {
+      background: linear-gradient(to bottom, #9ca2a3, #7ded9b);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      color: #161409;
+    }
+
+    .container {
+      margin-top: 80px;
+      max-width: 500px;
+      padding: 30px;
+      background-color: white;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      background-color: #343a40;
+      padding: 20px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      margin: -30px -30px 30px -30px;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    button {
+      font-weight: bold;
+    }
+
+    .alert {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <form method="POST">
+      <div class="mb-3">
+        <label class="form-label">Weight (kg):</label>
+        <input type="number" step="any" name="Weight" class="form-control" placeholder="Enter your weight" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Height (m):</label>
+        <input type="number" step="any" name="Height" class="form-control" placeholder="Enter your height" required>
+      </div>
+      <button type="submit" class="btn btn-dark w-100">Calculate BMI</button>
+    </form>
+
+    {% if calc_index %}
+    <div class="alert alert-info mt-4 text-center">
+      <strong>Your BMI is:</strong> {{ calc_index }}
+      <br>
+      <p class="{{ bmi_class }}">{{ result }}</p>
+      <!-- <strong>Result is: {{ result }}</strong> -->
+      <!-- <br> -->
+      <strong>Suggestion: {{ do }}</strong>
+   </div>
+    {% endif %}
+    <!-- <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button> -->
+  </div>
+  
+    <!-- <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('light')) {
+                body.classList.replace('light', 'dark');
+            } else {
+                body.classList.replace('dark', 'light');
+            }
+        }
+    </script> -->
+        
+
+</body>
+</html>
